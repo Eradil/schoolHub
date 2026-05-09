@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build output
+dist
+dist-ssr
+
+# Environment variables — НИКОГДА не заливать на GitHub
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
