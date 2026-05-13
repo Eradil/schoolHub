@@ -169,7 +169,7 @@ export default function ClassPage() {
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xs text-slate-400 font-medium">Класс:</span>
-          <div className="flex gap-1">
+          <div className="flex gap-1 flex-wrap">
             {CLASS_OPTIONS.map((c) => (
               <button
                 key={c}

@@ -173,7 +173,11 @@ export default function TasksPage() {
     setLoading(true);
     try {
       const res = await generateTasks({ subject, classNum, topic, count });
-      setTasks(res.tasks || []);
+      if (res.error) {
+        setError(res.error);
+      } else {
+        setTasks(res.tasks || []);
+      }
     } catch (e) {
       setError(e.message || "Ошибка");
     } finally {
