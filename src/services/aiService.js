@@ -6,8 +6,8 @@
 
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
-const MODEL_PRIMARY = "deepseek/deepseek-r1:free";
-const MODEL_FALLBACK = "google/gemini-2.0-flash-exp:free";
+const MODEL_PRIMARY = "openrouter/free";
+const MODEL_FALLBACK = "openrouter/free";
 
 export function hasApiKey() {
   const key = import.meta.env.VITE_GROQ_API_KEY;
@@ -17,7 +17,7 @@ export function hasApiKey() {
 async function callAI(messages, maxTokens = 1500) {
   if (!hasApiKey()) throw new Error("NO_API_KEY");
 
-  for (const model of [MODEL_PRIMARY, MODEL_FALLBACK]) {
+  for (const model of [MODEL_PRIMARY]) {
     try {
       const res = await fetch(API_URL, {
         method: "POST",
